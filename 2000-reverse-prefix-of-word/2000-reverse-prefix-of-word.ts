@@ -1,11 +1,8 @@
 function reversePrefix(word: string, ch: string): string {
-    let arr = word.split("");
-  let indx = arr.findIndex((el) => el === ch);
-  if (!indx || indx < 0) return word;
-  return (
-    arr
-      .slice(0, indx + 1)
-      .reverse()
-      .join("") + arr.slice(indx + 1, arr.length).join("")
-  );
+  const index = word.indexOf(ch);
+
+    for(let i = 0; i < word.length; i++){
+        if(index === -1) return word;
+        return word.slice(0, index + 1).split('').reverse().join('') + word.slice(index + 1);
+    }
 };
